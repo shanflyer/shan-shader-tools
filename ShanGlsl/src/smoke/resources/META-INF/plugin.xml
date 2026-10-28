@@ -1,0 +1,13 @@
+<idea-plugin>
+    <id>dev.shanflyer.glsl.smoke</id>
+    <name>Shan GLSL Sandbox Tests</name>
+    <version>0.1.1</version>
+    <vendor>ShanFlyer</vendor>
+    <idea-version since-build="262" until-build="262.*"/>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>dev.shanflyer.glsl</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <appStarter id="shanGlslSmoke" implementation="dev.shanflyer.glsl.SandboxSmoke"/>
+    </extensions>
+</idea-plugin>

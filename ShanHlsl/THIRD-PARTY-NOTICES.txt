@@ -1,0 +1,27 @@
+Shan HLSL 0.1.1
+
+This CLion plugin bundles a modified build of HlslTools by Tim Jones:
+https://github.com/tgjones/HlslTools
+Pinned upstream commit: 3cb3e76a8a5a35daf6f8e6fa5c32da7facf7175a
+Source archive SHA256: C7BA38646847E26C5468F85B4EF86B889D50661F4B66B9D8F24C3403787E8DB5
+Copyright 2015 Tim Jones. Apache License 2.0.
+Original copyright and dependency notices are reproduced in LICENSE.
+
+Modifications Copyright 2026 ShanFlyer, Apache License 2.0:
+- IntelliJ/CLion frontend and LSP integration.
+- .NET 10 untrimmed self-contained Windows x64 deployment.
+- Expose the existing HLSL formatter and classification service over JSON-RPC.
+- Null-safe completion context and automatic signature-help trigger characters.
+- Newtonsoft.Json upgraded to 13.0.4 to address GHSA-5crp-9r3c-p9vr.
+Build-time patches are in backend/prepare.ps1 and backend/extensions/.
+The vocabulary is extracted from the same pinned HlslTools source.
+
+The server includes .NET 10 runtime and NuGet dependencies, including Roslyn,
+OmniSharp.Extensions.LanguageServer, Newtonsoft.Json, MediatR and Serilog.
+Their available package license files and license metadata are in server/licenses/.
+The common MIT and Apache 2.0 license texts and original NuGet package copyright
+and author metadata are included there alongside package-specific notices.
+CLion/IntelliJ API binaries are compile-only and are not bundled.
+No Microsoft DXC, Vulkan SDK or IDE license is bundled.
+
+This plugin is not affiliated with or endorsed by Tim Jones, Microsoft or JetBrains.

@@ -1,0 +1,15 @@
+<p><strong>Shan GLSL</strong> brings GLSL editing and local shader diagnostics to CLion.</p>
+<ul>
+  <li>Syntax highlighting with configurable GLSL keyword, built-in function and variable colors.</li>
+  <li>Built-in keyword/function completion and identifiers from the current shader.</li>
+  <li>Code folding, brace matching and line/block comments.</li>
+  <li>Live glslang diagnostics for unsaved shader text, shown in the editor and Problems window.</li>
+  <li>Vulkan and OpenGL validation, stage suffix detection, includes and //! / //? comment substitutions.</li>
+</ul>
+<p><strong>Requirements:</strong> CLion 2026.2 build 262.10968.117 or later within the 262 branch.
+The beta is tested on Windows x64. Install glslangValidator separately; it is discovered from VULKAN_SDK or PATH,
+or configured in Settings | Languages &amp; Frameworks | Shan GLSL.</p>
+<p>The plugin provides vocabulary/file-identifier completion rather than full GLSL type inference.
+Validation does not replace your shader build pipeline. Disable other plugins claiming the same file extensions if associations conflict.</p>
+<p>Free and open source under MIT. Contains vocabulary from Daniel Scherzer's GLSLhelper with attribution.</p>
+<p><a href="https://github.com/shanflyer/shan-shader-tools">Source code, documentation and issue tracker</a></p>

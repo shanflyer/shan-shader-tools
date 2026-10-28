@@ -1,0 +1,36 @@
+<idea-plugin url="https://github.com/shanflyer/shan-shader-tools">
+    <id>dev.shanflyer.glsl</id>
+    <name>Shan GLSL</name>
+    <version>0.1.1</version>
+    <vendor email="shanflyer@qq.com" url="https://github.com/shanflyer">ShanFlyer</vendor>
+    <description><![CDATA[
+        GLSL editing for CLion: syntax colors inspired by Daniel Scherzer's GLSL extension,
+        OpenGL 4.6 and shader identifier completion, folding, and live glslang diagnostics.
+        Supports Vulkan, OpenGL, ray tracing and mesh shaders, includes and //! / //? comments.
+        Configure the compiler under Settings | Languages & Frameworks | Shan GLSL.
+    ]]></description>
+    <change-notes><![CDATA[<p>Initial Marketplace beta. Added plugin logo, accurate compatibility constraints, publisher metadata and third-party notices.</p>]]></change-notes>
+    <idea-version since-build="262.10968.117" until-build="262.*"/>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.clion</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <additionalTextAttributes scheme="Default" file="colorSchemes/ShanGlsl.xml"/>
+        <additionalTextAttributes scheme="Darcula" file="colorSchemes/ShanGlsl.xml"/>
+        <fileType name="Shan GLSL" language="ShanGLSL"
+                  implementationClass="dev.shanflyer.glsl.language.GlslFileType" fieldName="instance"
+                  extensions="glsl;vert;frag;geom;comp;tesc;tese;mesh;task;rgen;rint;rmiss;rahit;rchit;rcall"/>
+        <lang.parserDefinition language="ShanGLSL" implementationClass="dev.shanflyer.glsl.language.GlslParserDefinition"/>
+        <lang.syntaxHighlighterFactory language="ShanGLSL" implementationClass="dev.shanflyer.glsl.editor.GlslHighlighterFactory"/>
+        <lang.foldingBuilder language="ShanGLSL" implementationClass="dev.shanflyer.glsl.editor.GlslFoldingBuilder"/>
+        <lang.braceMatcher language="ShanGLSL" implementationClass="dev.shanflyer.glsl.editor.GlslBraceMatcher"/>
+        <lang.commenter language="ShanGLSL" implementationClass="dev.shanflyer.glsl.editor.GlslCommenter"/>
+        <completion.contributor language="ShanGLSL" implementationClass="dev.shanflyer.glsl.editor.GlslCompletionContributor"/>
+        <externalAnnotator language="ShanGLSL" implementationClass="dev.shanflyer.glsl.diagnostics.GlslExternalAnnotator"/>
+        <annotator language="ShanGLSL" implementationClass="dev.shanflyer.glsl.editor.GlslUserKeywordAnnotator"/>
+        <colorSettingsPage implementation="dev.shanflyer.glsl.editor.GlslColorSettingsPage"/>
+        <applicationConfigurable parentId="language" id="dev.shanflyer.glsl.settings" displayName="Shan GLSL"
+                                 instance="dev.shanflyer.glsl.settings.GlslConfigurable"/>
+        <postStartupActivity implementation="dev.shanflyer.glsl.diagnostics.GlslIncludeWatcher"/>
+    </extensions>
+</idea-plugin>

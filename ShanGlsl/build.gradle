@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+group = 'dev.shanflyer'
+version = '0.1.1'
+
+def clionHome = providers.gradleProperty('clionHome')
+        .orElse(providers.environmentVariable('CLION_HOME'))
+        .orElse('C:/Program Files/JetBrains/CLion 2026.2.3')
+
+dependencies {
+    compileOnly fileTree(dir: "${clionHome.get()}/lib", include: '*.jar')
+    testCompileOnly fileTree(dir: "${clionHome.get()}/lib", include: '*.jar')
+    testRuntimeOnly fileTree(dir: "${clionHome.get()}/lib", include: '*.jar')
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 25
+}
+
+tasks.named('processResources') {
+    from('LICENSE', 'THIRD-PARTY-NOTICES.txt') { into 'META-INF' }
+}
+
+tasks.register('coreTest', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.shanflyer.glsl.CoreTests'
+    jvmArgs '-ea', '-Djava.awt.headless=true'
+}
+
+tasks.register('buildPlugin', Zip) {
+    dependsOn jar, coreTest
+    archiveFileName = "ShanGlsl-${project.version}.zip"
+    destinationDirectory = layout.buildDirectory.dir('distributions')
+    into('ShanGlsl/lib') { from tasks.jar }
+}

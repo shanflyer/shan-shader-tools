@@ -1,0 +1,7 @@
+<list>
+    <option name="SHAN_GLSL_KEYWORD"><value><option name="FOREGROUND" value="5fafff"/></value></option>
+    <option name="SHAN_GLSL_FUNCTION"><value><option name="FOREGROUND" value="ffaf5f"/></value></option>
+    <option name="SHAN_GLSL_VARIABLE"><value><option name="FOREGROUND" value="5fffff"/></value></option>
+    <option name="SHAN_GLSL_USER_ONE"><value><option name="FOREGROUND" value="af5fff"/></value></option>
+    <option name="SHAN_GLSL_USER_TWO"><value><option name="FOREGROUND" value="ff5faf"/></value></option>
+</list>

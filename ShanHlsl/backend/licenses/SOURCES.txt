@@ -1,0 +1,10 @@
+Bundled common license texts
+
+Apache-2.0.txt: https://www.apache.org/licenses/LICENSE-2.0.txt
+Humanizer-LICENSE.txt: https://raw.githubusercontent.com/Humanizr/Humanizer/main/license.txt
+MIT.txt: standard MIT permission/warranty text. Original package author and
+copyright metadata are preserved separately in THIRD-PARTY-ATTRIBUTIONS.txt.
+
+Downloaded license texts were checked on 2026-10-28. The Humanizer 2.2.0 NuGet
+metadata points to the same Humanizer project license, whose current canonical
+filename is license.txt on its main branch. The upstream is MIT licensed.

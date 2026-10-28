@@ -1,0 +1,13 @@
+<idea-plugin>
+    <id>dev.shanflyer.hlsl.smoke</id>
+    <name>Shan HLSL Sandbox Tests</name>
+    <version>0.1.1</version>
+    <vendor>ShanFlyer</vendor>
+    <idea-version since-build="262" until-build="262.*"/>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>dev.shanflyer.hlsl</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <appStarter id="shanHlslSmoke" implementation="dev.shanflyer.hlsl.SandboxSmoke"/>
+    </extensions>
+</idea-plugin>

@@ -1,0 +1,9 @@
+{
+    "root": true,
+    "hlsl.preprocessorDefinitions": {
+        "SHAN_DEMO": 1
+    },
+    "hlsl.additionalIncludeDirectories": [
+        "."
+    ]
+}

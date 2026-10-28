@@ -1,0 +1,37 @@
+<idea-plugin url="https://github.com/shanflyer/shan-shader-tools">
+    <id>dev.shanflyer.hlsl</id>
+    <name>Shan HLSL</name>
+    <version>0.1.1</version>
+    <vendor email="shanflyer@qq.com" url="https://github.com/shanflyer">ShanFlyer</vendor>
+    <description><![CDATA[
+        HLSL for CLion, powered by Tim Jones' HlslTools engine: semantic completion, signature help,
+        hover, definition navigation, document symbols, reference highlighting, live diagnostics,
+        formatting and preprocessor-aware colors. Bundles a Windows x64 language server.
+    ]]></description>
+    <change-notes><![CDATA[<p>Initial Marketplace beta. Added plugin logo, accurate compatibility constraints, publisher metadata and third-party notices. Removed internal JetBrains API usage.</p>]]></change-notes>
+    <idea-version since-build="262.10968.117" until-build="262.*"/>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.clion</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.lsp</depends>
+    <incompatible-with>com.intellij.modules.os.mac</incompatible-with>
+    <incompatible-with>com.intellij.modules.os.linux</incompatible-with>
+    <incompatible-with>com.intellij.modules.os.freebsd</incompatible-with>
+    <incompatible-with>com.intellij.modules.arch.arm64</incompatible-with>
+    <incompatible-with>com.intellij.modules.arch.arm32</incompatible-with>
+    <incompatible-with>com.intellij.modules.arch.x86</incompatible-with>
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType name="Shan HLSL" language="ShanHLSL" implementationClass="dev.shanflyer.hlsl.language.HlslFileType"
+                  fieldName="instance" extensions="hlsl;hlsli;fx;fxh"/>
+        <lang.parserDefinition language="ShanHLSL" implementationClass="dev.shanflyer.hlsl.language.HlslParserDefinition"/>
+        <lang.syntaxHighlighterFactory language="ShanHLSL" implementationClass="dev.shanflyer.hlsl.editor.HlslHighlighterFactory"/>
+        <lang.foldingBuilder language="ShanHLSL" implementationClass="dev.shanflyer.hlsl.editor.HlslFoldingBuilder"/>
+        <lang.braceMatcher language="ShanHLSL" implementationClass="dev.shanflyer.hlsl.editor.HlslBraceMatcher"/>
+        <lang.commenter language="ShanHLSL" implementationClass="dev.shanflyer.hlsl.editor.HlslCommenter"/>
+        <externalAnnotator language="ShanHLSL" implementationClass="dev.shanflyer.hlsl.lsp.HlslClassificationAnnotator"/>
+        <platform.lsp.integrationProvider implementation="dev.shanflyer.hlsl.lsp.HlslLspIntegrationProvider"/>
+        <colorSettingsPage implementation="dev.shanflyer.hlsl.editor.HlslColorSettingsPage"/>
+        <applicationConfigurable parentId="language" id="dev.shanflyer.hlsl.settings" displayName="Shan HLSL"
+                                 instance="dev.shanflyer.hlsl.settings.HlslConfigurable"/>
+    </extensions>
+</idea-plugin>

@@ -1,0 +1,28 @@
+{
+    "version": "0.1.1",
+    "recommendedChannel": "beta",
+    "pricing": "free",
+    "vendor": {
+        "name": "ShanFlyer",
+        "id": "shanflyer",
+        "email": "shanflyer@qq.com",
+        "url": "https://github.com/shanflyer",
+        "traderStatus": "non-trader"
+    },
+    "sourceUrl": "https://github.com/shanflyer/shan-shader-tools",
+    "issueTrackerUrl": "https://github.com/shanflyer/shan-shader-tools/issues",
+    "plugins": [
+        {
+            "id": "dev.shanflyer.glsl",
+            "name": "Shan GLSL",
+            "license": "MIT",
+            "listing": "listing-glsl.html"
+        },
+        {
+            "id": "dev.shanflyer.hlsl",
+            "name": "Shan HLSL",
+            "license": "Apache-2.0",
+            "listing": "listing-hlsl.html"
+        }
+    ]
+}
