@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'dev.shanflyer'
-version = '0.1.1'
+version = '0.2.0'
 
 def clionHome = providers.gradleProperty('clionHome')
         .orElse(providers.environmentVariable('CLION_HOME'))

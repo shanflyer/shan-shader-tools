@@ -1,12 +1,19 @@
-# Shan HLSL for CLion
+# Shan HLSL for JetBrains IDEs
 
-版本 0.1.2，适配 Windows x64 上的 CLion 2026.2.x（262.*）。
+版本 0.2.0，适配 Windows x64 上提供原生 LSP 模块的 JetBrains 2026.2 IDE（262.10968–262.*）。
 独立于 Shan GLSL，可同时安装。引擎源码和 CMake 无需修改。
+
+## IDE 兼容性
+
+最低构建为 `262.10968`，最高为 `262.*`（2026.2 系列），不要求安装 CLion 或 C/C++ 支持插件。
+支持具有原生 LSP 模块的 IntelliJ IDEA、CLion、PyCharm、WebStorm、PhpStorm、Rider、GoLand、RubyMine、DataGrip、RustRover；DataSpell 需处于同一支持构建范围。
+Android Studio 和旧版开源 IDEA Community 缺少原生 LSP 模块，因此不属于此 HLSL 发行版的支持范围。
+捆绑服务器仍限 Windows x64。
 
 ## 安装
 
-CLion → Settings → Plugins → 齿轮 → Install Plugin from Disk，选择
-`build/distributions/ShanHlsl-0.1.2.zip`，按提示重启。
+IDE → Settings → Plugins → 齿轮 → Install Plugin from Disk，选择
+`build/distributions/ShanHlsl-0.2.0.zip`，按提示重启。
 安装包包含语言服务器及 .NET 运行时，使用插件不需要另外安装 .NET SDK、DXC 或 Vulkan SDK。
 如已有其他 HLSL 插件，先停用，避免文件关联冲突。
 默认支持 `.hlsl`、`.hlsli`、`.fx`、`.fxh`。
@@ -24,7 +31,7 @@ CLion → Settings → Plugins → 齿轮 → Install Plugin from Disk，选择
 
 常用动作：Ctrl+Space 补全，Ctrl+P 参数提示，Ctrl+B 定义跳转，
 Ctrl+Q 文档，Ctrl+Alt+L 格式化，Alt+7 文件结构。
-具体快捷键以所选 CLion Keymap 为准。
+具体快捷键以所选 IDE 的 Keymap 为准。
 
 设置入口：Languages & Frameworks → Shan HLSL。
 可以停用语言服务、停用语义配色、指定其他语言服务器程序及启动参数。
@@ -57,7 +64,7 @@ CLion 的菜单、弹窗、字体、颜色主题和导航界面由 IDE 绘制，
 导航栏通过 CLion 的 Structure / 符号导航呈现，没有复制 VS 的语法树可视化窗口。
 符号搜索范围沿用语言服务器已打开文档的工作区，不承诺全项目离线索引。
 新 HLSL 语法的支持范围取决于此版本的 HlslTools；实时分析结果不替代最终 DXC 编译。
-本版只验证 Windows x64 / CLion 262.*。
+本版支持 Windows x64；使用原生 LSP 模块，不再依赖 CLion/C++ 模块。
 
 ## 构建
 

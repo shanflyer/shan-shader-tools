@@ -1,4 +1,4 @@
-Shan GLSL 0.1.1
+Shan GLSL 0.2.0
 
 Vocabulary data
 ---------------

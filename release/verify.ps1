@@ -1,6 +1,7 @@
 param(
     [string] $ClionHome = 'C:\Program Files\JetBrains\CLion 2026.2.3',
-    [string] $Version = '',
+    [string] $Version = '0.2.0',
+    [string[]] $IdeHomes = @(),
     [string] $PluginRoot = (Split-Path -Parent $PSScriptRoot)
 )
 $ErrorActionPreference = 'Stop'
@@ -15,17 +16,18 @@ if ((Get-FileHash -LiteralPath $verifier -Algorithm SHA256).Hash -ne 'D6CC1C1F17
     throw 'Plugin Verifier SHA256 mismatch'
 }
 $java = Join-Path $ClionHome 'jbr/bin/java.exe'
+if ($IdeHomes.Count -eq 0) { $IdeHomes = @($ClionHome) }
 foreach ($name in @('ShanGlsl', 'ShanHlsl')) {
-    $pluginVersion = if ($Version) { $Version } elseif ($name -eq 'ShanHlsl') { '0.1.2' } else { '0.1.1' }
+    $pluginVersion = $Version
     $archive = Join-Path $PluginRoot "$name/build/distributions/$name-$pluginVersion.zip"
     if (-not (Test-Path -LiteralPath $archive)) { throw "Missing plugin archive: $archive" }
-    $reports = Join-Path $work "verifier-final/$name"
+    $reports = Join-Path $work "verifier-$pluginVersion/$name"
     $verifierHome = Join-Path $work "verifier-home-$name"
     # OS/architecture dependencies are synthetic IDE modules. JetBrains documents
     # this flag for local binary verification; it does not suppress API findings.
     $platformOptions = if ($name -eq 'ShanHlsl') { @('-ignore-os-arch') } else { @() }
     & $java "-Dplugin.verifier.home.dir=$verifierHome" -Xmx2g -jar $verifier check-plugin @platformOptions `
-        -verification-reports-dir $reports $archive $ClionHome
+        -runtime-dir (Join-Path $ClionHome 'jbr') -verification-reports-dir $reports $archive @IdeHomes
     if ($LASTEXITCODE -ne 0) { throw "Plugin Verifier failed for $name" }
     $verdicts = @(Get-ChildItem -LiteralPath $reports -Filter verification-verdict.txt -Recurse)
     if ($verdicts.Count -eq 0) { throw "No verification verdict for $name" }

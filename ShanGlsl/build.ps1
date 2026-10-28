@@ -49,8 +49,8 @@ $package = Join-Path $buildRoot 'package\ShanGlsl'
 $lib = Join-Path $package 'lib'
 $dist = Join-Path $buildRoot 'distributions'
 New-Item -ItemType Directory -Path $lib, $dist -Force | Out-Null
-& $jar cf (Join-Path $lib 'shan-glsl-0.1.1.jar') -C $classes .
+& $jar cf (Join-Path $lib 'shan-glsl-0.2.0.jar') -C $classes .
 if ($LASTEXITCODE -ne 0) { throw 'JAR packaging failed' }
-$zip = Join-Path $dist 'ShanGlsl-0.1.1.zip'
+$zip = Join-Path $dist 'ShanGlsl-0.2.0.zip'
 Compress-Archive -LiteralPath $package -DestinationPath $zip -Force
 Write-Host "Built $zip for CLion $($product.version) ($($product.buildNumber))"

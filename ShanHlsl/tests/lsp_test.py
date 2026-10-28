@@ -119,7 +119,7 @@ def main():
                     "completion": {"completionItem": {"snippetSupport": True}},
                     "hover": {"contentFormat": ["markdown", "plaintext"]},
                     "signatureHelp": {"signatureInformation": {"documentationFormat": ["markdown"]}}
-                }}, "clientInfo": {"name": "Shan HLSL tests", "version": "0.1.2"}
+                }}, "clientInfo": {"name": "Shan HLSL tests", "version": "0.2.0"}
             })
             caps = result["capabilities"]
             (root / "build/lsp-capabilities.json").write_text(json.dumps(caps, indent=2), encoding="utf-8")

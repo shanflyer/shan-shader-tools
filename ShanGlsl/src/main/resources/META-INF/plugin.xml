@@ -1,18 +1,29 @@
 <idea-plugin url="https://github.com/shanflyer/shan-shader-tools">
     <id>dev.shanflyer.glsl</id>
     <name>Shan GLSL</name>
-    <version>0.1.1</version>
+    <version>0.2.0</version>
     <vendor email="shanflyer@qq.com" url="https://github.com/shanflyer">ShanFlyer</vendor>
     <description><![CDATA[
-        GLSL editing for CLion: syntax colors inspired by Daniel Scherzer's GLSL extension,
-        OpenGL 4.6 and shader identifier completion, folding, and live glslang diagnostics.
-        Supports Vulkan, OpenGL, ray tracing and mesh shaders, includes and //! / //? comments.
-        Configure the compiler under Settings | Languages & Frameworks | Shan GLSL.
+<p><strong>Shan GLSL</strong> brings GLSL editing and local shader diagnostics to JetBrains IDEs.</p>
+<ul>
+  <li>Syntax highlighting with configurable GLSL keyword, built-in function and variable colors.</li>
+  <li>Built-in keyword/function completion and identifiers from the current shader.</li>
+  <li>Code folding, brace matching and line/block comments.</li>
+  <li>Live glslang diagnostics for unsaved shader text, shown in the editor and Problems window.</li>
+  <li>Vulkan and OpenGL validation, stage suffix detection, includes and //! / //? comment substitutions.</li>
+</ul>
+<p><strong>Requirements:</strong> JetBrains IDE 2026.2 build 262.10968 or later within the 262 branch.
+The beta is tested on Windows x64. Install glslangValidator separately; it is discovered from VULKAN_SDK or PATH,
+or configured in Settings | Languages &amp; Frameworks | Shan GLSL.</p>
+<p>The plugin provides vocabulary/file-identifier completion rather than full GLSL type inference.
+Validation does not replace your shader build pipeline. Disable other plugins claiming the same file extensions if associations conflict.</p>
+<p>Free and open source under MIT. Contains vocabulary from Daniel Scherzer's GLSLhelper with attribution.</p>
+<p><a href="https://github.com/shanflyer/shan-shader-tools">Source code, documentation and issue tracker</a></p>
+<p>Uses shared IntelliJ Platform language APIs without a CLion or C/C++ plugin dependency. Compatible with IntelliJ-based IDEs in the supported build range.</p>
     ]]></description>
-    <change-notes><![CDATA[<p>Initial Marketplace beta. Added plugin logo, accurate compatibility constraints, publisher metadata and third-party notices.</p>]]></change-notes>
-    <idea-version since-build="262.10968.117" until-build="262.*"/>
+    <change-notes><![CDATA[<p>Multi-IDE release: remove the CLion-only dependency and support compatible IntelliJ Platform 2026.2 IDEs. HLSL retains its native LSP and Windows x64 requirements.</p>]]></change-notes>
+    <idea-version since-build="262.10968" until-build="262.*"/>
     <depends>com.intellij.modules.platform</depends>
-    <depends>com.intellij.clion</depends>
     <depends>com.intellij.modules.lang</depends>
     <extensions defaultExtensionNs="com.intellij">
         <additionalTextAttributes scheme="Default" file="colorSchemes/ShanGlsl.xml"/>

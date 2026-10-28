@@ -1,6 +1,6 @@
 # Shan Shader Tools
 
-Two independent shader editing plugins for CLion: **Shan GLSL** and **Shan HLSL**.
+Two independent shader editing plugins for JetBrains IDEs: **Shan GLSL** and **Shan HLSL**.
 
 | Plugin | Features | Runtime |
 | --- | --- | --- |
@@ -9,7 +9,13 @@ Two independent shader editing plugins for CLion: **Shan GLSL** and **Shan HLSL*
 
 ## Compatibility
 
-Shan GLSL 0.1.1 and Shan HLSL 0.1.2 target CLion 2026.2 build 262.10968.117 and later 262.* builds.
+Both plugins are version 0.2.0 and target IntelliJ Platform 2026.2 builds from 262.10968 through 262.*.
+They no longer depend on CLion or C/C++ support modules.
+GLSL uses the common platform/language APIs. HLSL additionally requires the native LSP module.
+Marketplace recognizes HLSL support for IntelliJ IDEA, CLion, PyCharm, WebStorm, PhpStorm, Rider, GoLand, RubyMine, DataGrip and RustRover in this build range.
+HLSL does not support Android Studio or legacy open-source IntelliJ IDEA Community builds.
+DataSpell currently has no release in the supported 262 build range.
+See [compatibility and validation](release/COMPATIBILITY.md) for the verification matrix.
 This release is tested on Windows x64. HLSL requires Windows x64.
 The two plugins can be installed together. Disable other plugins claiming the same file extensions if associations conflict.
 

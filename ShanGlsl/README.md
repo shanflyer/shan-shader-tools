@@ -1,16 +1,22 @@
-# Shan GLSL for CLion
+# Shan GLSL for JetBrains IDEs
 
-为 CLion 2026.2 编写的 GLSL 编辑插件。以 Daniel Scherzer 的
+为 IntelliJ Platform 2026.2 系列 IDE 编写的 GLSL 编辑插件。以 Daniel Scherzer 的
 [GLSL language integration](https://marketplace.visualstudio.com/items?itemName=DanielScherzer.GLSL2022)
 为功能与配色参照，采用 IntelliJ Platform 原生扩展实现。
 
-当前版本：`0.1.1`。目标：CLion `2026.2.x / 262.*`，Java 25。
+当前版本：`0.2.0`。目标：IntelliJ Platform `2026.2.x / 262.10968–262.*`，Java 25。
 已在本机 CLion `2026.2.3 / 262.10968.117` 编译和运行验证。
+
+## IDE 兼容性
+
+最低构建为 `262.10968`，最高为 `262.*`（2026.2 系列），不要求安装 CLion 或 C/C++ 支持插件。
+只依赖通用平台和语言模块，可用于同一构建范围内的 IntelliJ IDEA、CLion、PyCharm、WebStorm、PhpStorm、Rider、GoLand、RubyMine、DataGrip、RustRover 等 IntelliJ 平台 IDE。
+GLSL 编译器由用户在本地安装或配置。
 
 ## 安装
 
-1. 在 CLion 打开 **Settings → Plugins → 齿轮 → Install Plugin from Disk**。
-2. 选择本目录下的 `build/distributions/ShanGlsl-0.1.1.zip`，无需解压。
+1. 在 IDE 打开 **Settings → Plugins → 齿轮 → Install Plugin from Disk**。
+2. 选择本目录下的 `build/distributions/ShanGlsl-0.2.0.zip`，无需解压。
 3. 按 IDE 提示重启。
 4. 打开 `examples/triangle.vert` 或自己的 shader。
 

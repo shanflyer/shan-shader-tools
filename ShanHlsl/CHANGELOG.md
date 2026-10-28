@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0 — 2026-10-28
+
+- Remove the CLion-specific module dependency for multi-IDE support.
+- Use a shared 262.10968 minimum build across JetBrains 2026.2 products.
+- Update Marketplace descriptions and IDE compatibility documentation.
+
 ## 0.1.2 — 2026-10-28
 
 - Correct Marketplace Windows x64 platform declarations using OS/architecture dependencies.

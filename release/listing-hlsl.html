@@ -1,4 +1,4 @@
-<p><strong>Shan HLSL</strong> adds HLSL language services to CLion, powered by Tim Jones' open-source HlslTools engine.</p>
+<p><strong>Shan HLSL</strong> adds HLSL language services to JetBrains IDEs, powered by Tim Jones' open-source HlslTools engine.</p>
 <ul>
   <li>Semantic completion for shader symbols, struct members and built-in functions.</li>
   <li>Signature help, hover documentation, definition navigation and reference highlighting.</li>
@@ -7,10 +7,11 @@
   <li>The HlslTools formatter, preprocessor-aware semantic colors and inactive-region highlighting.</li>
   <li>Includes and preprocessor definitions using shadertoolsconfig.json.</li>
 </ul>
-<p><strong>Requirements:</strong> Windows x64 and CLion 2026.2 build 262.10968.117 or later within the 262 branch.
+<p><strong>Requirements:</strong> Windows x64 and JetBrains IDE 2026.2 build 262.10968 or later within the 262 branch.
 The package includes the local language server and .NET runtime; installing .NET SDK or DXC is not required to use it.</p>
 <p>This beta follows the pinned HlslTools engine's language support. Some newer HLSL syntax may be unsupported.
 Symbol search follows the server's opened-document workspace. Save include files before refreshing dependent shaders.
 The IDE interface differs from Visual Studio; the VS syntax-tree visualizer is not included.</p>
 <p>Free and open source under Apache 2.0 with retained upstream and dependency notices.</p>
 <p><a href="https://github.com/shanflyer/shan-shader-tools">Source code, documentation and issue tracker</a></p>
+<p>Requires the IDE's native LSP module. Compatible products include IntelliJ IDEA, CLion, PyCharm, WebStorm, PhpStorm, Rider, GoLand, RubyMine, DataGrip and RustRover in the supported build range. Android Studio and legacy IntelliJ IDEA Community builds do not include this module.</p>

@@ -16,7 +16,7 @@
             "name": "Shan GLSL",
             "license": "MIT",
             "listing": "listing-glsl.html",
-            "version": "0.1.1",
+            "version": "0.2.0",
             "marketplaceUrl": "https://plugins.jetbrains.com/plugin/35575-shan-glsl"
         },
         {
@@ -24,7 +24,7 @@
             "name": "Shan HLSL",
             "license": "Apache-2.0",
             "listing": "listing-hlsl.html",
-            "version": "0.1.2",
+            "version": "0.2.0",
             "marketplaceUrl": "https://plugins.jetbrains.com/plugin/35576-shan-hlsl"
         }
     ]
