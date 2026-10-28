@@ -56,10 +56,10 @@ $package = Join-Path $buildRoot 'package\ShanHlsl'
 $lib = Join-Path $package 'lib'
 $dist = Join-Path $buildRoot 'distributions'
 New-Item -ItemType Directory -Path $lib, $dist -Force | Out-Null
-& $jar cf (Join-Path $lib 'shan-hlsl-0.1.1.jar') -C $classes .
+& $jar cf (Join-Path $lib 'shan-hlsl-0.1.2.jar') -C $classes .
 if ($LASTEXITCODE -ne 0) { throw 'JAR packaging failed' }
 Copy-Item -LiteralPath (Join-Path $buildRoot 'server') -Destination $package -Recurse -Force
 Copy-Item -LiteralPath (Join-Path $projectRoot 'LICENSE'), (Join-Path $projectRoot 'THIRD-PARTY-NOTICES.txt') -Destination $package -Force
-$zip = Join-Path $dist 'ShanHlsl-0.1.1.zip'
+$zip = Join-Path $dist 'ShanHlsl-0.1.2.zip'
 Compress-Archive -LiteralPath $package -DestinationPath $zip -Force
 Write-Host "Built $zip for CLion $($product.version) ($($product.buildNumber))"

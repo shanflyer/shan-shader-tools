@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 — 2026-10-28
+
+- Correct Marketplace Windows x64 platform declarations using OS/architecture dependencies.
+
 ## 0.1.1 — 2026-10-28
 
 - Prepare the first Marketplace beta with a dedicated SVG logo and publisher metadata.

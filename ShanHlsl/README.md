@@ -1,12 +1,12 @@
 # Shan HLSL for CLion
 
-版本 0.1.1，适配 Windows x64 上的 CLion 2026.2.x（262.*）。
+版本 0.1.2，适配 Windows x64 上的 CLion 2026.2.x（262.*）。
 独立于 Shan GLSL，可同时安装。引擎源码和 CMake 无需修改。
 
 ## 安装
 
 CLion → Settings → Plugins → 齿轮 → Install Plugin from Disk，选择
-`build/distributions/ShanHlsl-0.1.1.zip`，按提示重启。
+`build/distributions/ShanHlsl-0.1.2.zip`，按提示重启。
 安装包包含语言服务器及 .NET 运行时，使用插件不需要另外安装 .NET SDK、DXC 或 Vulkan SDK。
 如已有其他 HLSL 插件，先停用，避免文件关联冲突。
 默认支持 `.hlsl`、`.hlsli`、`.fx`、`.fxh`。

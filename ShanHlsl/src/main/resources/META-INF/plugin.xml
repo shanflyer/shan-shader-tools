@@ -1,25 +1,23 @@
 <idea-plugin url="https://github.com/shanflyer/shan-shader-tools">
     <id>dev.shanflyer.hlsl</id>
     <name>Shan HLSL</name>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
     <vendor email="shanflyer@qq.com" url="https://github.com/shanflyer">ShanFlyer</vendor>
     <description><![CDATA[
         HLSL for CLion, powered by Tim Jones' HlslTools engine: semantic completion, signature help,
         hover, definition navigation, document symbols, reference highlighting, live diagnostics,
         formatting and preprocessor-aware colors. Bundles a Windows x64 language server.
     ]]></description>
-    <change-notes><![CDATA[<p>Initial Marketplace beta. Added plugin logo, accurate compatibility constraints, publisher metadata and third-party notices. Removed internal JetBrains API usage.</p>]]></change-notes>
+    <change-notes><![CDATA[<p>Correct Windows x64 platform declarations for JetBrains Marketplace compatibility. Includes the bundled HlslTools language server and runtime.</p>]]></change-notes>
     <idea-version since-build="262.10968.117" until-build="262.*"/>
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.clion</depends>
     <depends>com.intellij.modules.lang</depends>
     <depends>com.intellij.modules.lsp</depends>
-    <incompatible-with>com.intellij.modules.os.mac</incompatible-with>
-    <incompatible-with>com.intellij.modules.os.linux</incompatible-with>
-    <incompatible-with>com.intellij.modules.os.freebsd</incompatible-with>
-    <incompatible-with>com.intellij.modules.arch.arm64</incompatible-with>
-    <incompatible-with>com.intellij.modules.arch.arm32</incompatible-with>
-    <incompatible-with>com.intellij.modules.arch.x86</incompatible-with>
+    <dependencies>
+        <plugin id="com.intellij.modules.os.windows"/>
+        <plugin id="com.intellij.modules.arch.x86_64"/>
+    </dependencies>
     <extensions defaultExtensionNs="com.intellij">
         <fileType name="Shan HLSL" language="ShanHLSL" implementationClass="dev.shanflyer.hlsl.language.HlslFileType"
                   fieldName="instance" extensions="hlsl;hlsli;fx;fxh"/>

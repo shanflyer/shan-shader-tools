@@ -1,6 +1,5 @@
 {
-    "version": "0.1.1",
-    "recommendedChannel": "beta",
+    "recommendedChannel": "stable",
     "pricing": "free",
     "vendor": {
         "name": "ShanFlyer",
@@ -16,13 +15,17 @@
             "id": "dev.shanflyer.glsl",
             "name": "Shan GLSL",
             "license": "MIT",
-            "listing": "listing-glsl.html"
+            "listing": "listing-glsl.html",
+            "version": "0.1.1",
+            "marketplaceUrl": "https://plugins.jetbrains.com/plugin/35575-shan-glsl"
         },
         {
             "id": "dev.shanflyer.hlsl",
             "name": "Shan HLSL",
             "license": "Apache-2.0",
-            "listing": "listing-hlsl.html"
+            "listing": "listing-hlsl.html",
+            "version": "0.1.2",
+            "marketplaceUrl": "https://plugins.jetbrains.com/plugin/35576-shan-hlsl"
         }
     ]
 }

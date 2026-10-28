@@ -1,4 +1,4 @@
-Shan HLSL 0.1.1
+Shan HLSL 0.1.2
 
 This CLion plugin bundles a modified build of HlslTools by Tim Jones:
 https://github.com/tgjones/HlslTools

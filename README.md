@@ -9,7 +9,7 @@ Two independent shader editing plugins for CLion: **Shan GLSL** and **Shan HLSL*
 
 ## Compatibility
 
-The 0.1.1 beta targets CLion 2026.2 build 262.10968.117 and later 262.* builds.
+Shan GLSL 0.1.1 and Shan HLSL 0.1.2 target CLion 2026.2 build 262.10968.117 and later 262.* builds.
 This release is tested on Windows x64. HLSL requires Windows x64.
 The two plugins can be installed together. Disable other plugins claiming the same file extensions if associations conflict.
 
